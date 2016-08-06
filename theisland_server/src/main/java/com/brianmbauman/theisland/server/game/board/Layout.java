@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.lang.annotation.Inherited;
 import java.lang.reflect.Type;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -74,7 +75,7 @@ public final class Layout {
         try {
             //Read JSON file
             String rawJson = new String(
-                    Files.readAllBytes(Paths.get("theisland_server/src/main/resources/Layouts.json"))
+                    Files.readAllBytes(Paths.get("src/main/resources/Layouts.json"))
             );
 
             //Parse into array of Layouts - custom deserializer to convert int to bool
