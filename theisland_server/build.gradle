@@ -1,0 +1,23 @@
+group 'com.brianmbauman.theisland.theisland_server'
+version '0.0.1-SNAPSHOT'
+
+apply plugin: 'application'
+apply plugin: 'idea'
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+mainClassName = "com.brianmbauman.theisland.server.Main"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.google.code.gson:gson:2.+'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = 2.13
+}

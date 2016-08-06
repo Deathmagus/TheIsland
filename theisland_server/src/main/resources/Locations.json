@@ -1,0 +1,88 @@
+[
+  {
+    "name": "Breakers Bridge"
+  },
+  {
+    "name": "Bronze Gate",
+    "roleStart": "Engineer"
+  },
+  {
+    "name": "Cave of Embers",
+    "treasureLocation": "Fire"
+  },
+  {
+    "name": "Cave of Shadows",
+    "treasureLocation": "Fire"
+  },
+  {
+    "name": "Cliffs of Abandon"
+  },
+  {
+    "name": "Copper Gate",
+    "roleStart": "Explorer"
+  },
+  {
+    "name": "Coral Palace",
+    "treasureLocation": "Water"
+  },
+  {
+    "name": "Crimson Forest"
+  },
+  {
+    "name": "Dunes of Deception"
+  },
+  {
+    "name": "Fools Landing",
+    "roleStart": "Pilot"
+  },
+  {
+    "name": "Gold Gate",
+    "roleStart": "Navigator"
+  },
+  {
+    "name": "Howling Garden",
+    "treasureLocation": "Air"
+  },
+  {
+    "name": "Iron Gate",
+    "roleStart": "Diver"
+  },
+  {
+    "name": "Lost Lagoon"
+  },
+  {
+    "name": "Misty Marsh"
+  },
+  {
+    "name": "Observatory"
+  },
+  {
+    "name": "Phantom Rock"
+  },
+  {
+    "name": "Silver Gate",
+    "roleStart": "Messenger"
+  },
+  {
+    "name": "Temple of the Moon",
+    "treasureLocation": "Earth"
+  },
+  {
+    "name": "Temple of the Sun",
+    "treasureLocation": "Earth"
+  },
+  {
+    "name": "Tidal Palace",
+    "treasureLocation": "Water"
+  },
+  {
+    "name": "Twilight Hollow"
+  },
+  {
+    "name": "Watchtower"
+  },
+  {
+    "name": "Whispering Garden",
+    "treasureLocation": "Air"
+  }
+]
