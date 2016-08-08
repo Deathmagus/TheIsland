@@ -1,8 +1,23 @@
 package com.brianmbauman.theisland.server.game;
 
+import com.brianmbauman.theisland.server.game.board.Layout;
+
 /**
- * Created by BBauman on 8/4/16.
+ * Contains all of the configurable settings for a {@link Game}.
+ * <p>
+ * Every property should have default values, so that it can be initialized in a usable state and then
+ * updated with custom settings.
+ * These settings are passed to any new {@link Game}.
+ * If no GameConfig object is sent, {@link Game} creates one of its own on the fly, using default values.
  */
 public class GameConfig {
+    private Layout layout = Layout.getLayout();
 
+    public Layout getLayout() {
+        return layout;
+    }
+
+    public void setLayout(Layout layout) {
+        this.layout = layout;
+    }
 }

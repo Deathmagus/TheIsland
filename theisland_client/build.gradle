@@ -7,6 +7,9 @@ apply plugin: 'java'
 
 sourceCompatibility = 1.8
 
+mainClassName = "com.brianmbauman.theisland.client.Main"
+
+
 repositories {
     mavenCentral()
 }

@@ -8,6 +8,10 @@ import java.util.Map;
 public class Board {
     private Map<Coordinate, Location> island;
 
+    public Board(Layout layout){
+        //TODO - Convert layouts to maps.
+    }
+
     public Location getLocation(Coordinate coordinate){
         return island.get(coordinate);
     }
