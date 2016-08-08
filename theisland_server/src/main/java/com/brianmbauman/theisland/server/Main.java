@@ -1,5 +1,6 @@
 package com.brianmbauman.theisland.server;
 
+import com.brianmbauman.theisland.server.game.Game;
 import com.brianmbauman.theisland.server.game.board.Layout;
 
 /**
@@ -8,7 +9,6 @@ import com.brianmbauman.theisland.server.game.board.Layout;
 public class Main {
 
     public static void main(String[] args){
-        //Quick test of resource reading
-        System.out.print(Layout.getRandomLayout().toString());
+
     }
 }

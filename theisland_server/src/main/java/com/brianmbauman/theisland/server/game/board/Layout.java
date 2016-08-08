@@ -2,21 +2,14 @@ package com.brianmbauman.theisland.server.game.board;
 
 import com.google.gson.*;
 
-import java.io.IOException;
-import java.lang.annotation.Inherited;
+import java.io.*;
 import java.lang.reflect.Type;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 /**
  * A reference for how a {@link com.brianmbauman.theisland.server.game.board.Board} is to be constructed
  * <p>
- * Layouts are immediately parsed from resources/Layouts.json when the application is started.
+ * Layouts are immediately parsed from src/main/resources/Layouts.json when the application is started.
  * They cannot be created on the fly.
  * <p>
  * A Layout consists of a 2-dimensional array of boolean values, indicating whether a particular cell is land or not.
@@ -72,11 +65,13 @@ public final class Layout {
     private static final Map<String, Layout> loadLayouts() {
         Map<String, Layout> layouts = new HashMap<>();
 
-        try {
             //Read JSON file
-            String rawJson = new String(
-                    Files.readAllBytes(Paths.get("src/main/resources/Layouts.json"))
-            );
+            ClassLoader loader = Thread.currentThread().getContextClassLoader();
+            InputStream stream = loader.getResourceAsStream("Layouts.json");
+            if(stream == null){
+                throw new RuntimeException("Layouts.json could not be loaded.");
+            }
+            String rawJson = new Scanner(stream, "utf-8").useDelimiter("\\Z").next();
 
             //Parse into array of Layouts - custom deserializer to convert int to bool
             GsonBuilder builder = new GsonBuilder();
@@ -90,10 +85,6 @@ public final class Layout {
             }
 
             return layouts;
-
-        } catch (IOException e) {
-            throw new RuntimeException("Layouts.json could not be loaded.");
-        }
     }
 
     @Override
