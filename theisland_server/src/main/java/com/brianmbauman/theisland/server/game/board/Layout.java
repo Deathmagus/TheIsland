@@ -1,10 +1,15 @@
 package com.brianmbauman.theisland.server.game.board;
 
 import com.google.gson.*;
-
 import java.io.*;
 import java.lang.reflect.Type;
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
+import java.util.Scanner;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A reference for how a {@link com.brianmbauman.theisland.server.game.board.Board} is to be constructed
@@ -24,11 +29,12 @@ import java.util.*;
  * ]
  */
 public final class Layout {
+    private static final Logger LOGGER = LoggerFactory.getLogger(Layout.class);
+
     /**
      * The full map of all Layouts loaded from resources/Layouts.json when the application started.  Each Layout's key is its name.
      */
     public static final Map<String, Layout> layouts = loadLayouts();
-
 
     private String name;
     private boolean[][] layout;
@@ -49,6 +55,7 @@ public final class Layout {
      * @return the Layout stored under the requested name
      */
     public static Layout getLayout(String string) {
+        LOGGER.info("Layout loaded: "+string);
         return layouts.get(string);
     }
 
@@ -59,7 +66,7 @@ public final class Layout {
     public static Layout getRandomLayout(){
         String[] keys = layouts.keySet().toArray(new String[Layout.layouts.size()]);
         int index = new Random().nextInt(layouts.size());
-        return layouts.get(keys[index]);
+        return Layout.getLayout(keys[index]);
     }
 
     private static final Map<String, Layout> loadLayouts() {

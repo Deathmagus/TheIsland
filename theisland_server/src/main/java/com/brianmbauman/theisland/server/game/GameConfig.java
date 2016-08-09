@@ -11,7 +11,7 @@ import com.brianmbauman.theisland.server.game.board.Layout;
  * If no GameConfig object is sent, {@link Game} creates one of its own on the fly, using default values.
  */
 public class GameConfig {
-    private Layout layout = Layout.getLayout();
+    private Layout layout = Layout.getRandomLayout();
 
     public Layout getLayout() {
         return layout;
